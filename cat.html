@@ -1,0 +1,160 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>懒猫 · 回忆录</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", sans-serif;
+    background: #fdf6f0;
+    color: #3e3232;
+    overflow-x: hidden;
+  }
+  :root { --accent: #6b9e9e; --accent-light: #a8cfcf; --accent-bg: #f5fafa; }
+  .back-btn {
+    position: fixed; top: 1.5rem; left: 1.5rem; z-index: 100;
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    text-decoration: none; color: var(--accent); font-weight: 600;
+    font-size: 0.95rem; background: rgba(255,255,255,0.8);
+    padding: 0.6rem 1.2rem; border-radius: 30px;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .back-btn:hover { transform: translateX(-4px); box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
+  .hero {
+    min-height: 60vh; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; text-align: center;
+    padding: 6rem 2rem 4rem;
+    background: linear-gradient(180deg, var(--accent-bg) 0%, #fdf6f0 100%);
+    position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: ""; position: absolute; top: -30%; left: 30%;
+    width: 400px; height: 400px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(107,158,158,0.08) 0%, transparent 70%);
+  }
+  .hero-avatar {
+    width: 160px; height: 160px; border-radius: 24px; overflow: hidden;
+    box-shadow: 0 8px 32px rgba(107,158,158,0.3);
+    margin-bottom: 1.5rem; position: relative; z-index: 1;
+  }
+  .hero-avatar img { width: 100%; height: 100%; object-fit: cover; }
+  .hero h1 { font-size: 2.5rem; color: #5a3e36; font-weight: 800; letter-spacing: 0.05em; position: relative; z-index: 1; }
+  .hero .role {
+    font-size: 1.1rem; color: var(--accent); font-weight: 500;
+    margin-top: 0.5rem; position: relative; z-index: 1;
+  }
+  .hero .quote {
+    font-size: 1rem; color: #9b7b6b; font-style: italic;
+    margin-top: 1.5rem; max-width: 400px; line-height: 1.8;
+    position: relative; z-index: 1;
+  }
+  section { padding: 3rem 2rem; max-width: 800px; margin: 0 auto; }
+  .section-title {
+    font-size: 1.5rem; color: #5a3e36; font-weight: 700;
+    margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem;
+  }
+  .section-title::after {
+    content: ""; flex: 1; height: 1px;
+    background: linear-gradient(to right, var(--accent-light), transparent);
+  }
+  .info-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+  .info-card {
+    background: #fff; border-radius: 16px; padding: 1.5rem;
+    box-shadow: 0 2px 16px rgba(107,158,158,0.06);
+    border-left: 3px solid var(--accent-light);
+  }
+  .info-card h4 { font-size: 0.85rem; color: var(--accent); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.5rem; }
+  .info-card p { color: #7a6a60; line-height: 1.6; font-size: 0.95rem; }
+  .memory-list { display: flex; flex-direction: column; gap: 1rem; }
+  .memory-item {
+    background: #fff; border-radius: 16px; padding: 1.5rem;
+    box-shadow: 0 2px 16px rgba(107,158,158,0.06);
+    display: flex; gap: 1rem; align-items: flex-start;
+  }
+  .memory-emoji { font-size: 2rem; flex-shrink: 0; }
+  .memory-item h4 { color: #5a3e36; margin-bottom: 0.3rem; }
+  .memory-item p { color: #7a6a60; font-size: 0.9rem; line-height: 1.6; }
+  footer {
+    text-align: center; padding: 3rem 2rem;
+    color: #b8957a; font-size: 0.85rem;
+    border-top: 1px solid rgba(180, 140, 120, 0.1);
+  }
+  @media (max-width: 600px) {
+    .hero h1 { font-size: 2rem; }
+    section { padding: 2rem 1rem; }
+  }
+</style>
+</head>
+<body>
+
+<a href="index.html" class="back-btn">← 回到回忆录</a>
+
+<div class="hero">
+  <div class="hero-avatar"><img src="images/4.png" alt="懒猫"></div>
+  <h1>懒猫</h1>
+  <p class="role">🐱 智慧担当</p>
+  <p class="quote">"不用急，一切都会刚刚好。"</p>
+</div>
+
+<section>
+  <h2 class="section-title">📋 关于懒猫</h2>
+  <div class="info-grid">
+    <div class="info-card">
+      <h4>超能力</h4>
+      <p>永远能在混乱中找到最优解。无论多复杂的事情，她三言两语就能理清楚。我们的人生导航。</p>
+    </div>
+    <div class="info-card">
+      <h4>隐藏技能</h4>
+      <p>读书狂魔。每年读 50+ 本书，而且能把书里的道理用最接地气的方式讲给你听。</p>
+    </div>
+    <div class="info-card">
+      <h4>最爱做的事</h4>
+      <p>窝在咖啡店角落，一杯美式一本书待一整天。但如果有人喊她，她会立刻合上书说"走"。</p>
+    </div>
+    <div class="info-card">
+      <h4>经典语录</h4>
+      <p>"不着急，慢慢来。" —— 她有一种让所有人都慢下来、深呼吸的能力。</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2 class="section-title">💭 我们的共同回忆</h2>
+  <div class="memory-list">
+    <div class="memory-item">
+      <span class="memory-emoji">☕</span>
+      <div>
+        <h4>咖啡店的"董事会"</h4>
+        <p>懒猫有一家固定去的咖啡店。每次我们遇到人生重大选择——考研、换工作、搬家——就会在那张靠窗的桌子开"四人董事会"。她是永远的轮值主席。</p>
+      </div>
+    </div>
+    <div class="memory-item">
+      <span class="memory-emoji">📚</span>
+      <div>
+        <h4>年度荐书</h4>
+        <p>每年生日，懒猫都会根据每个人的状态推荐一本书。不是随便推的，是真的花了很多心思。我们的书架上有三分之一是她"安排"的。</p>
+      </div>
+    </div>
+    <div class="memory-item">
+      <span class="memory-emoji">🌙</span>
+      <div>
+        <h4>凌晨三点的哲学家</h4>
+        <p>深夜群聊里，懒猫总是在大家聊完八卦之后，突然抛出一个关于人生意义的问题。然后我们就从天南聊到地北，聊到天亮。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>属于我们的回忆录 · 懒猫篇 🐱</p>
+</footer>
+
+</body>
+</html>
