@@ -86,15 +86,15 @@
     from { opacity: 0; transform: translateY(30px); }
     to { opacity: 1; transform: translateY(0); }
   }
-  section { padding: 5rem 2rem; max-width: 1100px; margin: 0 auto; position: relative; z-index: 1; }
+  section:not(.hero) { padding: 3rem 2rem; max-width: 1100px; margin: 1.5rem auto; position: relative; z-index: 1; background: rgba(255,250,245,0.88); backdrop-filter: blur(10px); border-radius: 24px; box-shadow: 0 4px 30px rgba(0,0,0,0.06); }
   .section-title {
     text-align: center; font-size: clamp(1.8rem, 3vw, 2.5rem);
-    color: #5a3e36; font-weight: 700;
-    margin-bottom: 1rem; letter-spacing: 0.05em;
+    color: #3e2e28; font-weight: 700;
+    margin-bottom: 0.5rem; letter-spacing: 0.05em;
   }
   .section-desc {
-    text-align: center; color: #9b7b6b;
-    font-size: 1rem; margin-bottom: 3rem; font-weight: 300;
+    text-align: center; color: #8b7b6b;
+    font-size: 1rem; margin-bottom: 2rem; font-weight: 300;
   }
   .friends-grid {
     display: grid;
@@ -201,9 +201,10 @@
   .message-card .msg-name { font-weight: 600; color: #5a3e36; margin-bottom: 0.3rem; }
   .message-card .msg-date { font-size: 0.8rem; color: #b8957a; }
   .message-card .msg-text { color: #7a6a60; line-height: 1.7; margin-top: 0.5rem; }
-  footer { position: relative; z-index: 1; text-align: center; padding: 3rem 2rem;
-    color: #b8957a; font-size: 0.9rem;
-    border-top: 1px solid rgba(180, 140, 120, 0.15);
+  footer {
+    position: relative; z-index: 1; text-align: center; padding: 3rem 2rem;
+    color: rgba(255,250,245,0.85); font-size: 0.9rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
   }
   footer .heart { color: #d4a574; animation: heartbeat 1.5s infinite; display: inline-block; }
   @keyframes heartbeat {
@@ -214,7 +215,7 @@
   @media (max-width: 600px) {
     nav { gap: 1rem; padding: 0.8rem 1rem; }
     nav a { font-size: 0.8rem; }
-    section { padding: 3rem 1rem; }
+    section:not(.hero) { padding: 3rem 1rem; }
   }
 </style>
 </head>
