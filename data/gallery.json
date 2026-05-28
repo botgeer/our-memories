@@ -1,0 +1,7 @@
+﻿{
+  "photos": [
+    {"title": "最好的我们", "image": "/main_pic/2.jpg", "date": "2019-09-15", "description": "第一张正式的四人合照"},
+    {"title": "那天笑疯了", "image": "/main_pic/3.jpg", "date": "2020-07-20", "description": "KTV 之夜，全都唱破音了"},
+    {"title": "在路上", "image": "/main_pic/4.jpg", "date": "2021-05-01", "description": "第一次自驾游，导航带错路"}
+  ]
+}
