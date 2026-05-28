@@ -1,4 +1,5 @@
-ï»¿backend:
+backend:
+  local_backend: true
   name: github
   repo: botgeer/our-memories
   branch: master
@@ -9,46 +10,46 @@ public_folder: "/uploads/photos"
 
 collections:
   - name: "photos"
-    label: "ğŸ“¸ ç…§ç‰‡ç›¸å†Œ"
+    label: "?? ÕÕÆ¬Ïà²á"
     files:
-      - label: "ç…§ç‰‡åˆ—è¡¨"
+      - label: "ÕÕÆ¬ÁĞ±í"
         name: "gallery"
         file: "data/gallery.json"
         fields:
           - name: "photos"
-            label: "ç…§ç‰‡"
+            label: "ÕÕÆ¬"
             widget: "list"
-            summary: "{{title}} â€” {{date}}"
+            summary: "{{title}} ¡ª {{date}}"
             fields:
-              - {label: "æ ‡é¢˜", name: "title", widget: "string"}
-              - {label: "ç…§ç‰‡", name: "image", widget: "image", required: true}
-              - {label: "æ—¥æœŸ", name: "date", widget: "datetime", format: "YYYY-MM-DD", default: ""}
-              - {label: "æè¿°", name: "description", widget: "text", required: false}
+              - {label: "±êÌâ", name: "title", widget: "string"}
+              - {label: "ÕÕÆ¬", name: "image", widget: "image", required: true}
+              - {label: "ÈÕÆÚ", name: "date", widget: "datetime", format: "YYYY-MM-DD", default: ""}
+              - {label: "ÃèÊö", name: "description", widget: "text", required: false}
 
   - name: "timeline"
-    label: "ğŸ“– æ—¶å…‰è½´"
+    label: "?? Ê±¹âÖá"
     files:
-      - label: "æ—¶å…‰äº‹ä»¶åˆ—è¡¨"
+      - label: "Ê±¹âÊÂ¼şÁĞ±í"
         name: "events"
         file: "data/timeline.json"
         fields:
           - name: "events"
-            label: "äº‹ä»¶"
+            label: "ÊÂ¼ş"
             widget: "list"
-            summary: "{{date_label}} â€” {{title}}"
+            summary: "{{date_label}} ¡ª {{title}}"
             fields:
-              - {label: "æ—¥æœŸæ ‡ç­¾", name: "date_label", widget: "string"}
-              - {label: "äº‹ä»¶æ ‡é¢˜", name: "title", widget: "string"}
-              - {label: "äº‹ä»¶æè¿°", name: "description", widget: "text"}
-              - {label: "é…å›¾(å¯é€‰)", name: "image", widget: "image", required: false}
+              - {label: "ÈÕÆÚ±êÇ©", name: "date_label", widget: "string"}
+              - {label: "ÊÂ¼ş±êÌâ", name: "title", widget: "string"}
+              - {label: "ÊÂ¼şÃèÊö", name: "description", widget: "text"}
+              - {label: "ÅäÍ¼(¿ÉÑ¡)", name: "image", widget: "image", required: false}
 
   - name: "settings"
-    label: "âš™ï¸ é¦–é¡µè®¾ç½®"
+    label: "?? Ê×Ò³ÉèÖÃ"
     files:
-      - label: "å°é¢è®¾ç½®"
+      - label: "·âÃæÉèÖÃ"
         name: "hero"
         file: "data/settings.json"
         fields:
-          - {label: "é¦–é¡µå¤§æ ‡é¢˜", name: "hero_title", widget: "string"}
-          - {label: "é¦–é¡µå‰¯æ ‡é¢˜", name: "hero_subtitle", widget: "string"}
-          - {label: "å°é¢èƒŒæ™¯å›¾", name: "hero_bg", widget: "image", required: false}
+          - {label: "Ê×Ò³´ó±êÌâ", name: "hero_title", widget: "string"}
+          - {label: "Ê×Ò³¸±±êÌâ", name: "hero_subtitle", widget: "string"}
+          - {label: "·âÃæ±³¾°Í¼", name: "hero_bg", widget: "image", required: false}
