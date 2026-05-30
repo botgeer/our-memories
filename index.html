@@ -18,24 +18,35 @@
     content: ''; position: fixed; inset: 0; z-index: 0; pointer-events: none;
     background: linear-gradient(180deg, rgba(20,10,5,0.35) 0%, rgba(20,10,5,0.25) 50%, rgba(20,10,5,0.45) 100%);
   }
-  nav { position: fixed; top: 0; z-index: 50; left: 0; right: 0; z-index: 100;
+
+  @media (min-aspect-ratio: 1/1) {
+    body { background: url("main_pic/999.jpg") top center / 100vw auto repeat-y; }
+  }
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100;
     display: flex; justify-content: center; gap: 2rem;
     padding: 1rem 2rem;
+    background: transparent;
+    transition: background 0.4s, backdrop-filter 0.4s, border-bottom 0.4s;
+  }
+  nav.scrolled {
     background: rgba(253, 246, 240, 0.7);
     backdrop-filter: blur(12px);
     border-bottom: 1px solid rgba(180, 140, 120, 0.15);
   }
   nav a {
-    text-decoration: none; color: #8b6b5a;
+    text-decoration: none; color: rgba(255,255,255,0.9);
     font-size: 0.95rem; font-weight: 500;
     transition: color 0.3s; position: relative;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.3);
   }
+  nav.scrolled a { color: #8b6b5a; text-shadow: none; }
   nav a::after {
     content: ""; position: absolute; bottom: -4px; left: 50%;
     width: 0; height: 2px; background: #d4a574;
     transition: all 0.3s; transform: translateX(-50%);
   }
   nav a:hover { color: #d4a574; }
+  nav.scrolled a:hover { color: #d4a574; }
   nav a:hover::after { width: 100%; }
   .hero {
     min-height: 100vh; display: flex;
@@ -335,6 +346,11 @@
 </footer>
 
 <script>
+// 导航栏滚动效果
+var nav = document.querySelector("nav");
+window.addEventListener("scroll", function() {
+  nav.classList.toggle("scrolled", window.scrollY > 50);
+});
 var STORAGE_KEY = 'our_memories_messages';
 
 function loadMessages() {
